@@ -1,0 +1,39 @@
+﻿^contentpage {
+    background-color: lightgray;
+}
+
+stacklayout {
+    padding: 0 10;
+}
+
+#result {
+    /* reset basic form styles */
+    color: #333;
+    text-align: right;
+    font-size: 50;
+}
+
+.calculatorButtons {
+    /* small spacing within our container */
+    padding: 10;
+    height: 500;
+}
+
+button {
+    background-color: darkgray; /* light background with opacity 50% */
+    font-size: 20; /* large font */
+    border-color: black;
+    border-width: 1;
+}
+
+/* go blue */
+button.isClear {
+    background-color: cornflowerblue;
+}
+
+button.isResult {
+    background-color: lightseagreen;
+    color: white;
+}
+
+
