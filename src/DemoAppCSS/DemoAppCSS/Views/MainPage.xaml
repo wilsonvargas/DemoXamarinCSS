@@ -9,6 +9,7 @@
     <ContentPage.Content>
         <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
             <StackLayout HorizontalOptions="EndAndExpand">
+                <Label Text="{Binding DisplayOperation}"/>
                 <Label x:Name="result" Text="{Binding Result}"/>
             </StackLayout>
             
@@ -26,26 +27,26 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Button Grid.Row="0" StyleClass="isClear" Grid.ColumnSpan="3" Text="C"/>
-                <Button Grid.Row="0" Grid.Column="3" Text="/"/>
+                <Button Grid.Row="0" CommandParameter="C" StyleClass="isClear" Grid.ColumnSpan="3" Text="C" Command="{Binding ClearCommand}"/>
+                <Button Grid.Row="0" CommandParameter="÷" Grid.Column="3" Text="÷" Command="{Binding OperatorCommand}"/>
 
-                <Button Grid.Row="1" Grid.Column="0" Text="7"/>
-                <Button Grid.Row="1" Grid.Column="1" Text="8"/>
-                <Button Grid.Row="1" Grid.Column="2" Text="9"/>
-                <Button Grid.Row="1" Grid.Column="3" Text="x"/>
+                <Button Grid.Row="1" CommandParameter="7" Grid.Column="0" Text="7" Command="{Binding KeyPressCommand}"/>
+                <Button Grid.Row="1" CommandParameter="8" Grid.Column="1" Text="8" Command="{Binding KeyPressCommand}"/>
+                <Button Grid.Row="1" CommandParameter="9" Grid.Column="2" Text="9" Command="{Binding KeyPressCommand}"/>
+                <Button Grid.Row="1" CommandParameter="×" Grid.Column="3" Text="×" Command="{Binding OperatorCommand}"/>
 
-                <Button Grid.Row="2" Grid.Column="0" Text="4"/>
-                <Button Grid.Row="2" Grid.Column="1" Text="5"/>
-                <Button Grid.Row="2" Grid.Column="2" Text="6"/>
-                <Button Grid.Row="2" Grid.Column="3" Text="-"/>
+                <Button Grid.Row="2" CommandParameter="4" Grid.Column="0" Text="4" Command="{Binding KeyPressCommand}"/>
+                <Button Grid.Row="2" CommandParameter="5" Grid.Column="1" Text="5" Command="{Binding KeyPressCommand}"/>
+                <Button Grid.Row="2" CommandParameter="6" Grid.Column="2" Text="6" Command="{Binding KeyPressCommand}"/>
+                <Button Grid.Row="2" CommandParameter="-" Grid.Column="3" Text="-" Command="{Binding OperatorCommand}"/>
 
-                <Button Grid.Row="3" Grid.Column="0" Text="1"/>
-                <Button Grid.Row="3" Grid.Column="1" Text="2"/>
-                <Button Grid.Row="3" Grid.Column="2" Text="3"/>
-                <Button Grid.Row="3" Grid.Column="3" Text="+"/>
+                <Button Grid.Row="3" CommandParameter="1" Grid.Column="0" Text="1" Command="{Binding KeyPressCommand}"/>
+                <Button Grid.Row="3" CommandParameter="2" Grid.Column="1" Text="2" Command="{Binding KeyPressCommand}"/>
+                <Button Grid.Row="3" CommandParameter="3" Grid.Column="2" Text="3" Command="{Binding KeyPressCommand}"/>
+                <Button Grid.Row="3" CommandParameter="+" Grid.Column="3" Text="+" Command="{Binding OperatorCommand}"/>
 
-                <Button Grid.Row="4" Grid.ColumnSpan="3" Text="0"/>
-                <Button Grid.Row="4" StyleClass="isResult" Grid.Column="3" Text="="/>
+                <Button Grid.Row="4" CommandParameter="0" Grid.ColumnSpan="3" Text="0" Command="{Binding KeyPressCommand}"/>
+                <Button Grid.Row="4" StyleClass="isResult" Grid.Column="3" Text="=" Command="{Binding ComputeCommand}"/>
 
             </Grid>
         </StackLayout>
