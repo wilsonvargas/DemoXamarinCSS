@@ -6,11 +6,11 @@ stacklayout {
     padding: 0 10;
 }
 
-stacklayout>label {
-    color: gray;
-    text-align: right;
-    font-size: 20;
-}
+    stacklayout > label {
+        color: gray;
+        text-align: right;
+        font-size: 20;
+    }
 
 #result {
     /* reset basic form styles */
@@ -32,14 +32,12 @@ button {
     border-width: 1;
 }
 
-/* go blue */
-button.isClear {
-    background-color: cornflowerblue;
-}
+    /* go blue */
+    button.isClear {
+        background-color: cornflowerblue;
+    }
 
-button.isResult {
-    background-color: lightseagreen;
-    color: white;
-}
-
-
+    button.isResult {
+        background-color: lightseagreen;
+        color: white;
+    }

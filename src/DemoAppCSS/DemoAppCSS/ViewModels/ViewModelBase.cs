@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Text;
 
 namespace DemoAppCSS.ViewModels
 {
     public class ViewModelBase : INotifyPropertyChanged
     {
-        string title = string.Empty;
+        /// <summary>
+        /// Occurs when property changed.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// Gets or sets the title.
@@ -19,6 +21,14 @@ namespace DemoAppCSS.ViewModels
             get { return title; }
             set { SetProperty(ref title, value); }
         }
+
+        private string title = string.Empty;
+
+        /// <summary>
+        /// Raises the property changed event.
+        /// </summary>
+        /// <param name="propertyName">Property name.</param>
+        protected void OnPropertyChanged([CallerMemberName]string propertyName = "") => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
         /// <summary>
         /// Sets the property.
@@ -42,16 +52,5 @@ namespace DemoAppCSS.ViewModels
             OnPropertyChanged(propertyName);
             return true;
         }
-
-        /// <summary>
-        /// Occurs when property changed.
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-        /// <summary>
-        /// Raises the property changed event.
-        /// </summary>
-        /// <param name="propertyName">Property name.</param>
-        protected void OnPropertyChanged([CallerMemberName]string propertyName = "") => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-
     }
 }
